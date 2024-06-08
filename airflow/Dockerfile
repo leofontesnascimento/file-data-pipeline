@@ -13,3 +13,13 @@ USER airflow
 
 COPY ./requirement.txt .
 RUN pip install -r requirement.txt
+
+RUN mkdir /opt/airflow/jars
+
+# RUN curl -O https://repo1.maven.org/maven2/io/delta/delta-core_2.12/2.4.0/delta-core_2.12-2.4.0.jar \
+#     && curl -O https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/hadoop-aws-3.3.6.jar
+    # && mv delta-core_2.12-2.4.0.jar /opt/airflow/jars \
+    # && mv hadoop-aws-3.3.6.jar /opt/airflow/jars 
+
+# wget https://repo1.maven.org/maven2/io/delta/delta-core_2.12/2.4.0/delta-core_2.12-2.4.0.jar
+# wget https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/hadoop-aws-3.3.6.jar

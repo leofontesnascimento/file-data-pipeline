@@ -24,6 +24,10 @@ with DAG(
         task_id='spark_task',
         application='/opt/airflow/dags/spark_job/spark_submit_operator.py',  # Caminho para o arquivo do job Spark
         conn_id='spark_default',  # ID da conexão do Spark definida no Airflow
+        conf={
+            'spark.executor.cores': '2',
+            'spark.cores.max': '4'
+        },
         name='spark_example_job',  # Nome do job Spark
         dag=dag,
     )
